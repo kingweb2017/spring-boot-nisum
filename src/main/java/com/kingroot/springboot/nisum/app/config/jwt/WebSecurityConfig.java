@@ -4,11 +4,9 @@ package com.kingroot.springboot.nisum.app.config.jwt;
 
 //@Configuration
 public class WebSecurityConfig  {
-/*
+	/*
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http, AuthenticationManager authManager) throws Exception {
-		
-		
 		
 		return http
 				.csrf().disable()
@@ -24,8 +22,7 @@ public class WebSecurityConfig  {
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
 				.build();
-	}
-	
+	}	
 	@Bean
 	UserDetailsService userDatailService() {
 		InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
@@ -34,16 +31,14 @@ public class WebSecurityConfig  {
 				.roles()
 				.build());
 		return manager;
-	}
-	
+	}	
 	@Bean
 	AuthenticationManager autManager(HttpSecurity http) throws Exception {
 		return http.getSharedObject(AuthenticationManagerBuilder.class)
 				.userDetailsService(userDatailService())
 				.passwordEncoder(passwordEncoder())
 				.and().build();
-	}
-	
+	}	
 	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
